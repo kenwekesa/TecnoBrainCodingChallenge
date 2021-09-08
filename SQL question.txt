@@ -1,0 +1,4 @@
+select CarMaker,CarModel,SUM(SalePriceInDollar) as TotalSalePrice from CarSales 
+WHERE SaleDate >= DATEADD(day,-30,GETDATE()) 
+and   SaleDate <= getdate()
+group by CarMaker, CarModel
